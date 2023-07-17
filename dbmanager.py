@@ -13,9 +13,6 @@ def formation():
     db.save_data_to_database(Company_ID, Vacancies)
 
 
-formation()
-
-
 class DBManager:
     """Класс подключаться к БД Postgres для вывода информации """
     def __init__(self):
