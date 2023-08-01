@@ -20,7 +20,7 @@ class DBManager:
 
     def connect_to_db(self):
         """Формирует запрос в Базе Данных"""
-        conn = psycopg2.connect(dbname='course_work', **self.config)
+        conn = psycopg2.connect(dbname='postgres', **self.config)
         return conn
 
     def get_companies_and_vacancies_count(self) -> None:
