@@ -50,17 +50,17 @@ class DB:
     def create_database(self):
         """Создание базы данных и таблиц для сохранения данных."""
 
-        conn = psycopg2.connect(dbname='postgres', **self.config)
+        conn = psycopg2.connect(dbname='course_work1', **self.config)
         conn.autocommit = True
         cur = conn.cursor()
 
-        cur.execute("DROP DATABASE course_work")
-        cur.execute("CREATE DATABASE course_work")
+        cur.execute("DROP DATABASE course_work1")
+        cur.execute("CREATE DATABASE course_work1")
 
         cur.close()
         conn.close()
 
-        conn = psycopg2.connect(dbname='course_work', **self.config)
+        conn = psycopg2.connect(dbname='course_work1', **self.config)
 
         with conn.cursor() as cur:
             cur.execute("""
@@ -86,7 +86,7 @@ class DB:
     def save_data_to_database(self, companies, vacancies):
         """Сохранение данных в таблицы."""
 
-        conn = psycopg2.connect(dbname='course_work', **self.config)
+        conn = psycopg2.connect(dbname='course_work1', **self.config)
 
         with conn.cursor() as cur:
             for company in companies:
